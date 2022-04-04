@@ -4,6 +4,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import org.junit.Test;
@@ -116,6 +118,8 @@ public class CarritoCompraServiceImpTest {
 		
 		assertEquals(2, idArticulo);
 		
+		verify(iBaseDatosService,times(1)).insertarArticulo(articulo);
+	
 	}
 	
 	
